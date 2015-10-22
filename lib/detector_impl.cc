@@ -24,6 +24,7 @@
 
 #include <gnuradio/io_signature.h>
 #include "detector_impl.h"
+#include <es/es_common.h>
 
 namespace gr {
   namespace eventsim {
@@ -43,8 +44,8 @@ namespace gr {
               gr::io_signature::make(0,0,0),
               gr::io_signature::make(0,0,0))
     {
-        message_port_register_out(pmt::intern("which_stream"));
-
+//        message_port_register_out(pmt::intern("which_stream"));
+        register_handler("detect_event");
     }
 
     /*
@@ -58,6 +59,12 @@ namespace gr {
     detector_impl::handler( pmt_t msg, gr_vector_void_star buf )
     {
         std::cout << "DETECTOR HANDLER!!\n";
+
+        uint64_t e_time = event_time(msg);
+        uint64_t e_len = event_length(msg);
+        
+//        pmt_t evt = event_create( pmt::mp("sample_timer_event"), event_time, event_len );
+ //       message_port_pub(pmt::mp("which_stream"), evt);
     }
 
 

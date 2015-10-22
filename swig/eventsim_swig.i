@@ -15,6 +15,7 @@
 %}
 
 %include "es/es_handler.h"
+%include "es/es_trigger.h"
 
 %include "eventsim/dispatcher.h"
 GR_SWIG_BLOCK_MAGIC2(eventsim, dispatcher);
