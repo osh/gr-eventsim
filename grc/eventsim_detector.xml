@@ -13,6 +13,20 @@
     <type>float</type>
   </param>
 
+  <param>
+    <name>dps</name>
+    <key>dps</key>
+    <value>100</value>
+    <type>float</type>
+  </param>
+
+  <param>
+    <name>load</name>
+    <key>load</key>
+    <value>1.0</value>
+    <type>float</type>
+  </param>
+
   <sink>
     <name>handle_event</name>
     <type>message</type>

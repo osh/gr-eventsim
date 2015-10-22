@@ -24,6 +24,7 @@
 
 #include <eventsim/api.h>
 #include <gnuradio/sync_block.h>
+#include <es/es_handler.h>
 
 namespace gr {
   namespace eventsim {
@@ -33,7 +34,7 @@ namespace gr {
      * \ingroup eventsim
      *
      */
-    class EVENTSIM_API detector : virtual public gr::sync_block
+    class EVENTSIM_API detector : virtual public es_handler
     {
      public:
       typedef boost::shared_ptr<detector> sptr;

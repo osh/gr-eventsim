@@ -40,8 +40,8 @@ namespace gr {
      */
     detector_impl::detector_impl(float fs, float dps, float load)
       : gr::sync_block("detector",
-              gr::io_signature::make(<+MIN_IN+>, <+MAX_IN+>, sizeof(<+ITYPE+>)),
-              gr::io_signature::make(<+MIN_OUT+>, <+MAX_OUT+>, sizeof(<+OTYPE+>)))
+              gr::io_signature::make(0,0,0),
+              gr::io_signature::make(0,0,0))
     {}
 
     /*
@@ -51,19 +51,12 @@ namespace gr {
     {
     }
 
-    int
-    detector_impl::work(int noutput_items,
-			  gr_vector_const_void_star &input_items,
-			  gr_vector_void_star &output_items)
+    void 
+    detector_impl::handler( pmt_t msg, gr_vector_void_star buf )
     {
-        const <+ITYPE+> *in = (const <+ITYPE+> *) input_items[0];
-        <+OTYPE+> *out = (<+OTYPE+> *) output_items[0];
-
-        // Do <+signal processing+>
-
-        // Tell runtime system how many output items we produced.
-        return noutput_items;
+        std::cout << "DETECTOR HANDLER!!\n";
     }
+
 
   } /* namespace eventsim */
 } /* namespace gr */
