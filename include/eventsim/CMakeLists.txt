@@ -23,5 +23,7 @@
 install(FILES
     api.h
     dispatcher.h
+    operation1.h
+    operation2.h
     detector.h DESTINATION include/eventsim
 )

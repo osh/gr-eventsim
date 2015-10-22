@@ -28,6 +28,8 @@ link_directories(${Boost_LIBRARY_DIRS})
 list(APPEND eventsim_sources
     dispatcher_impl.cc
     detector_impl.cc
+    operation1_impl.cc
+    operation2_impl.cc
 )
 
 set(eventsim_sources "${eventsim_sources}" PARENT_SCOPE)

@@ -19,5 +19,8 @@
 
 install(FILES
     eventsim_dispatcher.xml
-    eventsim_detector.xml DESTINATION share/gnuradio/grc/blocks
+    eventsim_detector.xml 
+    eventsim_operation1.xml 
+    eventsim_operation2.xml 
+    DESTINATION share/gnuradio/grc/blocks
 )

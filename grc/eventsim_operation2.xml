@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<block>
+  <name>operation2</name>
+  <key>eventsim_operation2</key>
+  <category>eventsim</category>
+  <import>import eventsim</import>
+  <make>eventsim.operation2($fs, $dps, $load)</make>
+
+  <param>
+    <name>fs</name>
+    <key>fs</key>
+    <value>samp_rate</value>
+    <type>float</type>
+  </param>
+
+  <param>
+    <name>dps</name>
+    <key>dps</key>
+    <value>100</value>
+    <type>float</type>
+  </param>
+
+  <param>
+    <name>load</name>
+    <key>load</key>
+    <value>1.0</value>
+    <type>float</type>
+  </param>
+
+  <sink>
+    <name>handle_event</name>
+    <type>message</type>
+    <optional>1</optional>
+  </sink>
+
+  <source>
+    <name>which_stream</name>
+    <type>message</type>
+    <optional>1</optional>
+  </source>
+</block>

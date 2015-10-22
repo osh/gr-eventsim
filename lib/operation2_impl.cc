@@ -23,23 +23,23 @@
 #endif
 
 #include <gnuradio/io_signature.h>
-#include "detector_impl.h"
+#include "operation2_impl.h"
 
 namespace gr {
   namespace eventsim {
 
-    detector::sptr
-    detector::make(float fs, float dps, float load)
+    operation2::sptr
+    operation2::make(float fs, float dps, float load)
     {
       return gnuradio::get_initial_sptr
-        (new detector_impl(fs, dps, load));
+        (new operation2_impl(fs, dps, load));
     }
 
     /*
      * The private constructor
      */
-    detector_impl::detector_impl(float fs, float dps, float load)
-      : gr::sync_block("detector",
+    operation2_impl::operation2_impl(float fs, float dps, float load)
+      : gr::sync_block("operation2",
               gr::io_signature::make(0,0,0),
               gr::io_signature::make(0,0,0))
     {
@@ -50,14 +50,14 @@ namespace gr {
     /*
      * Our virtual destructor.
      */
-    detector_impl::~detector_impl()
+    operation2_impl::~operation2_impl()
     {
     }
 
     void 
-    detector_impl::handler( pmt_t msg, gr_vector_void_star buf )
+    operation2_impl::handler( pmt_t msg, gr_vector_void_star buf )
     {
-        std::cout << "DETECTOR HANDLER!!\n";
+        std::cout << "OPERATION2 HANDLER!!\n";
     }
 
 
