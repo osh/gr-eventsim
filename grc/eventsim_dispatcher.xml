@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<block>
+  <name>dispatcher</name>
+  <key>eventsim_dispatcher</key>
+  <category>eventsim</category>
+  <import>import eventsim</import>
+  <make>eventsim.dispatcher($len, $overlap)</make>
+
+  <param>
+    <name>len</name>
+    <key>len</key>
+    <value>500</value>
+    <type>int</type>
+  </param>
+  
+  <param>
+    <name>overlap</name>
+    <key>overlap</key>
+    <value>64</value>
+    <type>int</type>
+  </param>
+
+  <sink>
+    <name>in</name>
+    <type>complex</type>
+  </sink>
+
+  <source>
+    <name>out</name>
+    <type>complex</type>
+  </source>
+</block>

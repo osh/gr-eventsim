@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<block>
+  <name>detector</name>
+  <key>eventsim_detector</key>
+  <category>eventsim</category>
+  <import>import eventsim</import>
+  <make>eventsim.detector($fs, $dps, $load)</make>
+
+  <param>
+    <name>fs</name>
+    <key>fs</key>
+    <value>samp_rate</value>
+    <type>float</type>
+  </param>
+
+  <sink>
+    <name>handle_event</name>
+    <type>message</type>
+    <optional>1</optional>
+  </sink>
+
+  <source>
+    <name>which_stream</name>
+    <type>message</type>
+    <optional>1</optional>
+  </source>
+</block>

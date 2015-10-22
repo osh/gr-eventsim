@@ -22,5 +22,6 @@
 ########################################################################
 install(FILES
     api.h
-    DESTINATION include/eventsim
+    dispatcher.h
+    detector.h DESTINATION include/eventsim
 )

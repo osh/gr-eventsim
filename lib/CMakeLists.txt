@@ -26,6 +26,8 @@ include_directories(${Boost_INCLUDE_DIR})
 link_directories(${Boost_LIBRARY_DIRS})
 
 list(APPEND eventsim_sources
+    dispatcher_impl.cc
+    detector_impl.cc
 )
 
 set(eventsim_sources "${eventsim_sources}" PARENT_SCOPE)
