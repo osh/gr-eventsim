@@ -30,24 +30,13 @@
 namespace gr {
   namespace eventsim {
 
-    /*!
-     * \brief <+description of block+>
-     * \ingroup eventsim
-     *
-     */
-    class EVENTSIM_API detector : public es_trigger, es_handler
+    class EVENTSIM_API detector : virtual public es_trigger, public es_handler
     {
      public:
-      void handler( pmt_t msg, gr_vector_void_star buf );
       typedef boost::shared_ptr<detector> sptr;
-      detector(float fs, float dps, float load);
-      ~detector();
-
-      virtual int work (int noutput_items,
-        gr_vector_const_void_star &input_items,
-        gr_vector_void_star &output_items) { return noutput_items; }
-
-      static es_handler_sptr make(float fs, float dps, float load);
+      virtual int work(int, gr_vector_const_void_star&, gr_vector_void_star&) = 0;
+      virtual void handler(pmt::pmt_t, gr_vector_void_star) = 0;
+      static sptr make(float fs, float dps, float load);
     };
 
   } // namespace eventsim

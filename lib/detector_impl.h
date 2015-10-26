@@ -26,22 +26,16 @@
 namespace gr {
   namespace eventsim {
 
-/*
     class detector_impl : public detector
     {
-
      public:
       detector_impl(float fs, float dps, float load);
       ~detector_impl();
-
-      // Where all the action really happens
-//      int work(int noutput_items,
-//	       gr_vector_const_void_star &input_items,
-//	       gr_vector_void_star &output_items);
-      
+      int work (int noutput_items,
+        gr_vector_const_void_star &input_items,
+        gr_vector_void_star &output_items) { return noutput_items; }
       void handler( pmt_t msg, gr_vector_void_star buf );
     };
-*/
 
   } // namespace eventsim
 } // namespace gr
