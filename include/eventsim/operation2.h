@@ -25,28 +25,17 @@
 #include <eventsim/api.h>
 #include <gnuradio/sync_block.h>
 #include <es/es_handler.h>
+#include <es/es_trigger.h>
 
 namespace gr {
   namespace eventsim {
 
-    /*!
-     * \brief <+description of block+>
-     * \ingroup eventsim
-     *
-     */
-    class EVENTSIM_API operation2 : virtual public es_handler
+    class EVENTSIM_API operation2 : virtual public es_trigger, public es_handler
     {
      public:
       typedef boost::shared_ptr<operation2> sptr;
-
-      /*!
-       * \brief Return a shared_ptr to a new instance of eventsim::operation2.
-       *
-       * To avoid accidental use of raw pointers, eventsim::operation2's
-       * constructor is in a private implementation
-       * class. eventsim::operation2::make is the public interface for
-       * creating new instances.
-       */
+      virtual int work(int, gr_vector_const_void_star&, gr_vector_void_star&) = 0;
+      virtual void handler(pmt::pmt_t, gr_vector_void_star) = 0;
       static sptr make(float fs, float dps, float load);
     };
 

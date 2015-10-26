@@ -56,8 +56,8 @@ namespace gr {
         uint64_t e_time = event_time(msg);
         uint64_t e_len = event_length(msg);
         
-//        pmt_t evt = event_create( pmt::mp("sample_timer_event"), event_time, event_len );
- //       message_port_pub(pmt::mp("which_stream"), evt);
+        pmt_t evt = event_create( pmt::mp("detect_event"), e_time, e_len );
+        message_port_pub(pmt::mp("which_stream"), evt);
     }
 
 

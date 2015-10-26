@@ -32,12 +32,9 @@ namespace gr {
      public:
       operation2_impl(float fs, float dps, float load);
       ~operation2_impl();
-
-      // Where all the action really happens
-//      int work(int noutput_items,
-//	       gr_vector_const_void_star &input_items,
-//	       gr_vector_void_star &output_items);
-      
+      int work (int noutput_items,
+        gr_vector_const_void_star &input_items,
+        gr_vector_void_star &output_items) { return noutput_items; }
       void handler( pmt_t msg, gr_vector_void_star buf );
     };
 

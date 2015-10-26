@@ -24,6 +24,7 @@
 
 #include <gnuradio/io_signature.h>
 #include "operation2_impl.h"
+#include <es/es_common.h>
 
 namespace gr {
   namespace eventsim {
@@ -35,21 +36,14 @@ namespace gr {
         (new operation2_impl(fs, dps, load));
     }
 
-    /*
-     * The private constructor
-     */
     operation2_impl::operation2_impl(float fs, float dps, float load)
       : gr::sync_block("operation2",
               gr::io_signature::make(0,0,0),
               gr::io_signature::make(0,0,0))
     {
-        message_port_register_out(pmt::intern("which_stream"));
-
+        register_handler("type2_event");
     }
 
-    /*
-     * Our virtual destructor.
-     */
     operation2_impl::~operation2_impl()
     {
     }
@@ -58,6 +52,12 @@ namespace gr {
     operation2_impl::handler( pmt_t msg, gr_vector_void_star buf )
     {
         std::cout << "OPERATION2 HANDLER!!\n";
+
+        uint64_t e_time = event_time(msg);
+        uint64_t e_len = event_length(msg);
+
+        pmt_t evt = event_create( pmt::mp("type2_event"), e_time, e_len );
+        message_port_pub(pmt::mp("which_stream"), evt);
     }
 
 
