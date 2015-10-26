@@ -26,6 +26,7 @@
 namespace gr {
   namespace eventsim {
 
+/*
     class detector_impl : public detector
     {
 
@@ -40,6 +41,7 @@ namespace gr {
       
       void handler( pmt_t msg, gr_vector_void_star buf );
     };
+*/
 
   } // namespace eventsim
 } // namespace gr

@@ -105,61 +105,6 @@
     </param>
   </block>
   <block>
-    <key>blocks_throttle</key>
-    <param>
-      <key>id</key>
-      <value>blocks_throttle_0</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>complex</value>
-    </param>
-    <param>
-      <key>samples_per_second</key>
-      <value>samp_rate</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>ignoretag</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(208, 142)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
     <key>blocks_null_source</key>
     <param>
       <key>id</key>
@@ -356,6 +301,308 @@
     </param>
   </block>
   <block>
+    <key>eventsim_operation2</key>
+    <param>
+      <key>id</key>
+      <value>eventsim_operation2_0</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>False</value>
+    </param>
+    <param>
+      <key>fs</key>
+      <value>samp_rate</value>
+    </param>
+    <param>
+      <key>dps</key>
+      <value>100</value>
+    </param>
+    <param>
+      <key>load</key>
+      <value>1.0</value>
+    </param>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(720, 554)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+  </block>
+  <block>
+    <key>eventsim_operation1</key>
+    <param>
+      <key>id</key>
+      <value>eventsim_operation1_0</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>False</value>
+    </param>
+    <param>
+      <key>fs</key>
+      <value>samp_rate</value>
+    </param>
+    <param>
+      <key>dps</key>
+      <value>100</value>
+    </param>
+    <param>
+      <key>load</key>
+      <value>1.0</value>
+    </param>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(720, 450)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+  </block>
+  <block>
+    <key>blocks_throttle</key>
+    <param>
+      <key>id</key>
+      <value>blocks_throttle_0</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>complex</value>
+    </param>
+    <param>
+      <key>samples_per_second</key>
+      <value>samp_rate</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>ignoretag</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(208, 142)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+  </block>
+  <block>
+    <key>es_handler_pdu</key>
+    <param>
+      <key>id</key>
+      <value>es_handler_pdu_1</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>False</value>
+    </param>
+    <param>
+      <key>dt</key>
+      <value>es.es_handler_print.TYPE_F32</value>
+    </param>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(400, 614)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+  </block>
+  <block>
+    <key>es_timer_trigger</key>
+    <param>
+      <key>id</key>
+      <value>es_timer_trigger_0</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>False</value>
+    </param>
+    <param>
+      <key>length</key>
+      <value>5000</value>
+    </param>
+    <param>
+      <key>delay</key>
+      <value>0.25</value>
+    </param>
+    <param>
+      <key>iterations</key>
+      <value>-1</value>
+    </param>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(128, 418)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+  </block>
+  <block>
+    <key>eventsim_detector</key>
+    <param>
+      <key>id</key>
+      <value>eventsim_detector_0</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>fs</key>
+      <value>samp_rate</value>
+    </param>
+    <param>
+      <key>dps</key>
+      <value>100</value>
+    </param>
+    <param>
+      <key>load</key>
+      <value>1.0</value>
+    </param>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(672, 306)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+  </block>
+  <block>
     <key>es_trigger_sample_timer</key>
     <param>
       <key>id</key>
@@ -442,7 +689,7 @@
     </param>
     <param>
       <key>eb</key>
-      <value>discard</value>
+      <value>asap</value>
     </param>
     <param>
       <key>alias</key>
@@ -466,172 +713,13 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1208, 306)</value>
+      <value>(1248, 250)</value>
     </param>
     <param>
       <key>_rotation</key>
       <value>0</value>
     </param>
   </block>
-  <block>
-    <key>eventsim_detector</key>
-    <param>
-      <key>id</key>
-      <value>eventsim_detector_0</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>fs</key>
-      <value>samp_rate</value>
-    </param>
-    <param>
-      <key>dps</key>
-      <value>100</value>
-    </param>
-    <param>
-      <key>load</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(728, 322)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>eventsim_operation1</key>
-    <param>
-      <key>id</key>
-      <value>eventsim_operation1_0</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>fs</key>
-      <value>samp_rate</value>
-    </param>
-    <param>
-      <key>dps</key>
-      <value>100</value>
-    </param>
-    <param>
-      <key>load</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(720, 450)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>eventsim_operation2</key>
-    <param>
-      <key>id</key>
-      <value>eventsim_operation2_0</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>fs</key>
-      <value>samp_rate</value>
-    </param>
-    <param>
-      <key>dps</key>
-      <value>100</value>
-    </param>
-    <param>
-      <key>load</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(720, 554)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-  </block>
-  <connection>
-    <source_block_id>es_trigger_sample_timer_0</source_block_id>
-    <sink_block_id>es_sink_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
   <connection>
     <source_block_id>blocks_throttle_0</source_block_id>
     <sink_block_id>es_trigger_sample_timer_0</sink_block_id>
@@ -663,18 +751,6 @@
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>eventsim_detector_0</source_block_id>
-    <sink_block_id>es_sink_0</sink_block_id>
-    <source_key>which_stream</source_key>
-    <sink_key>schedule_event</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>es_trigger_sample_timer_0</source_block_id>
-    <sink_block_id>eventsim_detector_0</sink_block_id>
-    <source_key>sample_timer_event</source_key>
-    <sink_key>handle_event</sink_key>
-  </connection>
-  <connection>
     <source_block_id>es_handler_pdu_0</source_block_id>
     <sink_block_id>pyqt_ctime_plot_0</sink_block_id>
     <source_key>pdus_out</source_key>
@@ -694,8 +770,44 @@
   </connection>
   <connection>
     <source_block_id>eventsim_detector_0</source_block_id>
+    <sink_block_id>es_sink_0</sink_block_id>
+    <source_key>which_stream</source_key>
+    <sink_key>schedule_event</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>es_trigger_sample_timer_0</source_block_id>
+    <sink_block_id>eventsim_detector_0</sink_block_id>
+    <source_key>sample_timer_event</source_key>
+    <sink_key>handle_event</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>eventsim_detector_0</source_block_id>
     <sink_block_id>eventsim_operation1_0</sink_block_id>
     <source_key>detect_event</source_key>
     <sink_key>handle_event</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>es_timer_trigger_0</source_block_id>
+    <sink_block_id>eventsim_detector_0</sink_block_id>
+    <source_key>timer_event</source_key>
+    <sink_key>handle_event</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>es_timer_trigger_0</source_block_id>
+    <sink_block_id>es_sink_0</sink_block_id>
+    <source_key>which_stream</source_key>
+    <sink_key>schedule_event</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>es_timer_trigger_0</source_block_id>
+    <sink_block_id>es_handler_pdu_1</sink_block_id>
+    <source_key>timer_event</source_key>
+    <sink_key>handle_event</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>es_trigger_sample_timer_0</source_block_id>
+    <sink_block_id>es_sink_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
   </connection>
 </flow_graph>

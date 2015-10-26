@@ -29,34 +29,37 @@
 namespace gr {
   namespace eventsim {
 
-    detector::sptr
+    //detector::sptr
+    es_handler_sptr 
     detector::make(float fs, float dps, float load)
     {
-      return gnuradio::get_initial_sptr
-        (new detector_impl(fs, dps, load));
+      //return gnuradio::get_initial_sptr
+      return es_handler_sptr
+        ((es_handler*)new detector(fs, dps, load));
     }
 
     /*
      * The private constructor
      */
-    detector_impl::detector_impl(float fs, float dps, float load)
+    detector::detector(float fs, float dps, float load)
       : gr::sync_block("detector",
               gr::io_signature::make(0,0,0),
               gr::io_signature::make(0,0,0))
     {
 //        message_port_register_out(pmt::intern("which_stream"));
+//        message_port_register_in(pmt::intern("handle_event"));
         register_handler("detect_event");
     }
 
     /*
      * Our virtual destructor.
      */
-    detector_impl::~detector_impl()
+    detector::~detector()
     {
     }
 
     void 
-    detector_impl::handler( pmt_t msg, gr_vector_void_star buf )
+    detector::handler( pmt_t msg, gr_vector_void_star buf )
     {
         std::cout << "DETECTOR HANDLER!!\n";
 

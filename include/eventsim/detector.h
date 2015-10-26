@@ -35,21 +35,19 @@ namespace gr {
      * \ingroup eventsim
      *
      */
-    class EVENTSIM_API detector : virtual public es_trigger
-    //class EVENTSIM_API detector : virtual public es_handler
+    class EVENTSIM_API detector : public es_trigger, es_handler
     {
      public:
+      void handler( pmt_t msg, gr_vector_void_star buf );
       typedef boost::shared_ptr<detector> sptr;
+      detector(float fs, float dps, float load);
+      ~detector();
 
-      /*!
-       * \brief Return a shared_ptr to a new instance of eventsim::detector.
-       *
-       * To avoid accidental use of raw pointers, eventsim::detector's
-       * constructor is in a private implementation
-       * class. eventsim::detector::make is the public interface for
-       * creating new instances.
-       */
-      static sptr make(float fs, float dps, float load);
+      virtual int work (int noutput_items,
+        gr_vector_const_void_star &input_items,
+        gr_vector_void_star &output_items) { return noutput_items; }
+
+      static es_handler_sptr make(float fs, float dps, float load);
     };
 
   } // namespace eventsim
