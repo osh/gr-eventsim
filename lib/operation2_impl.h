@@ -22,12 +22,15 @@
 #define INCLUDED_EVENTSIM_OPERATION2_IMPL_H
 
 #include <eventsim/operation2.h>
+#include <load_generator.h>
 
 namespace gr {
   namespace eventsim {
 
     class operation2_impl : public operation2
     {
+     private:
+      load_generator d_lg;
 
      public:
       operation2_impl(float fs, float dps, float load);

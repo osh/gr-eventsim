@@ -30,6 +30,7 @@ list(APPEND eventsim_sources
     detector_impl.cc
     operation1_impl.cc
     operation2_impl.cc
+    load_generator.cc
 )
 
 set(eventsim_sources "${eventsim_sources}" PARENT_SCOPE)

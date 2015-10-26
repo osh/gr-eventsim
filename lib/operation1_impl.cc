@@ -39,7 +39,8 @@ namespace gr {
     operation1_impl::operation1_impl(float fs, float dps, float load)
       : gr::sync_block("operation1",
               gr::io_signature::make(0,0,0),
-              gr::io_signature::make(0,0,0))
+              gr::io_signature::make(0,0,0)),
+        d_lg(load)
     {
         register_handler("type1_event");
     }
@@ -52,12 +53,16 @@ namespace gr {
     operation1_impl::handler( pmt_t msg, gr_vector_void_star buf )
     {
         std::cout << "OPERATION1 HANDLER!!\n";
+        d_lg.work();
 
         uint64_t e_time = event_time(msg);
         uint64_t e_len = event_length(msg);
 
-        pmt_t evt = event_create( pmt::mp("type1_event"), e_time, e_len );
-        message_port_pub(pmt::mp("which_stream"), evt);
+        // 60 percent chance of follow on event type2
+        if(random() % 100 < 60){
+            pmt_t evt = event_create( pmt::mp("type1_event"), e_time, e_len );
+            message_port_pub(pmt::mp("which_stream"), evt);
+            }
     }
 
 

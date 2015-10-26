@@ -25,6 +25,7 @@
 #include <gnuradio/io_signature.h>
 #include "detector_impl.h"
 #include <es/es_common.h>
+#include <stdio.h>
 
 namespace gr {
   namespace eventsim {
@@ -39,9 +40,13 @@ namespace gr {
     detector_impl::detector_impl(float fs, float dps, float load)
       : gr::sync_block("detector_impl",
               gr::io_signature::make(0,0,0),
-              gr::io_signature::make(0,0,0))
+              gr::io_signature::make(0,0,0)),
+        d_fs(fs),
+        d_dps(dps),
+        d_lg(load)
     {
-        register_handler("detect_event");
+        register_handler("detect_type1_event");
+        register_handler("detect_type2_event");
     }
 
     detector_impl::~detector_impl()
@@ -52,12 +57,35 @@ namespace gr {
     detector_impl::handler( pmt_t msg, gr_vector_void_star buf )
     {
         std::cout << "DETECTOR HANDLER!!\n";
+        d_lg.work();
 
         uint64_t e_time = event_time(msg);
         uint64_t e_len = event_length(msg);
         
-        pmt_t evt = event_create( pmt::mp("detect_event"), e_time, e_len );
-        message_port_pub(pmt::mp("which_stream"), evt);
+        int next_evt_len = 2048;
+
+        // pick a random number of events to target our detection rate (detection per second/dps)
+        int expected_num_events = (e_len/d_fs)*d_dps;
+        int num_events = random()%(2*expected_num_events);
+        printf("expected num events: %d ... number detected: %d\n", expected_num_events, num_events);
+
+        for(int i=0; i<num_events; i++){
+
+            // pick a random time within our window of detection
+            uint64_t evt_start = e_time + random()%(e_len);
+
+
+            // pick a random event type
+            pmt::pmt_t event_type(pmt::mp("detect_type1_event"));
+            // send it downstream
+            if(random()%2==1)
+                event_type = pmt::mp("detect_type2_event");
+
+
+            pmt_t evt = event_create( event_type, evt_start, next_evt_len );
+            message_port_pub(pmt::mp("which_stream"), evt);
+            }
+
     }
 
 

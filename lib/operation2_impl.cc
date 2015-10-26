@@ -39,7 +39,8 @@ namespace gr {
     operation2_impl::operation2_impl(float fs, float dps, float load)
       : gr::sync_block("operation2",
               gr::io_signature::make(0,0,0),
-              gr::io_signature::make(0,0,0))
+              gr::io_signature::make(0,0,0)),
+        d_lg(load)
     {
         register_handler("type2_event");
     }
@@ -52,12 +53,13 @@ namespace gr {
     operation2_impl::handler( pmt_t msg, gr_vector_void_star buf )
     {
         std::cout << "OPERATION2 HANDLER!!\n";
+        d_lg.work();
 
         uint64_t e_time = event_time(msg);
         uint64_t e_len = event_length(msg);
 
-        pmt_t evt = event_create( pmt::mp("type2_event"), e_time, e_len );
-        message_port_pub(pmt::mp("which_stream"), evt);
+//        pmt_t evt = event_create( pmt::mp("type2_event"), e_time, e_len );
+//        message_port_pub(pmt::mp("which_stream"), evt);
     }
 
 

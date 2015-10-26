@@ -40,7 +40,13 @@
   </source>
 
   <source>
-    <name>detect_event</name>
+    <name>detect_type1_event</name>
+    <type>message</type>
+    <optional>1</optional>
+  </source>
+
+  <source>
+    <name>detect_type2_event</name>
     <type>message</type>
     <optional>1</optional>
   </source>

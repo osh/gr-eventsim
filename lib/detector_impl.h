@@ -22,12 +22,17 @@
 #define INCLUDED_EVENTSIM_DETECTOR_IMPL_H
 
 #include <eventsim/detector.h>
+#include <load_generator.h>
 
 namespace gr {
   namespace eventsim {
 
     class detector_impl : public detector
     {
+     private:
+      float d_fs, d_dps, d_load;
+      load_generator d_lg;
+
      public:
       detector_impl(float fs, float dps, float load);
       ~detector_impl();
