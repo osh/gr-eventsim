@@ -25,6 +25,7 @@
 #include <gnuradio/io_signature.h>
 #include "operation2_impl.h"
 #include <es/es_common.h>
+#include "counter.h"
 
 namespace gr {
   namespace eventsim {
@@ -53,6 +54,8 @@ namespace gr {
     operation2_impl::handler( pmt_t msg, gr_vector_void_star buf )
     {
 //        std::cout << "OPERATION2 HANDLER!!\n";
+        counter::global_counter.d_events++;
+        counter::global_counter.d_runs_type_b++;
         d_lg.work();
 
         uint64_t e_time = event_time(msg);
