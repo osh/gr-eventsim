@@ -3,26 +3,23 @@
 
 #include <boost/atomic.hpp>
 #include <stdio.h>
+#include <boost/timer.hpp>
 
 namespace gr {
     namespace eventsim {
         class counter {
             private:
-        
+                boost::timer d_timer;
+
             public:
                 boost::atomic<uint64_t>     d_events;
                 boost::atomic<uint64_t>     d_runs_detector;
                 boost::atomic<uint64_t>     d_runs_type_a;
                 boost::atomic<uint64_t>     d_runs_type_b;
 
-                void print(){
-                    printf("********** COUNTER ************\n");
-                    printf("* events   = %lu\n", (uint64_t)d_events);
-                    printf("* detector = %lu\n", (uint64_t)d_runs_detector);
-                    printf("* type a   = %lu\n", (uint64_t)d_runs_type_a);
-                    printf("* type b   = %lu\n", (uint64_t)d_runs_type_b);
-                    printf("********** COUNTER ************\n");
-                }
+                counter();
+                ~counter();
+                void print();
         
             static counter global_counter;
         };

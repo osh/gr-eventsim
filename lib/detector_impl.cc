@@ -58,7 +58,7 @@ namespace gr {
     detector_impl::handler( pmt_t msg, gr_vector_void_star buf )
     {
         counter::global_counter.d_events++;
-        if(counter::global_counter.d_runs_detector++ % 100 == 0){
+        if(counter::global_counter.d_runs_detector++ % 100 == 99){
             counter::global_counter.print();
         }
 //        std::cout << "DETECTOR HANDLER!!\n";
