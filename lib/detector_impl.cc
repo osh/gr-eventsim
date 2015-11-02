@@ -56,7 +56,7 @@ namespace gr {
     void 
     detector_impl::handler( pmt_t msg, gr_vector_void_star buf )
     {
-        std::cout << "DETECTOR HANDLER!!\n";
+//        std::cout << "DETECTOR HANDLER!!\n";
         d_lg.work();
 
         uint64_t e_time = event_time(msg);
@@ -67,13 +67,12 @@ namespace gr {
         // pick a random number of events to target our detection rate (detection per second/dps)
         int expected_num_events = (e_len/d_fs)*d_dps;
         int num_events = random()%(2*expected_num_events);
-        printf("expected num events: %d ... number detected: %d\n", expected_num_events, num_events);
+//        printf("expected num events: %d ... number detected: %d\n", expected_num_events, num_events);
 
         for(int i=0; i<num_events; i++){
 
             // pick a random time within our window of detection
             uint64_t evt_start = e_time + random()%(e_len);
-
 
             // pick a random event type
             pmt::pmt_t event_type(pmt::mp("detect_type1_event"));

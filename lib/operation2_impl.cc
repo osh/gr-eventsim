@@ -52,7 +52,7 @@ namespace gr {
     void 
     operation2_impl::handler( pmt_t msg, gr_vector_void_star buf )
     {
-        std::cout << "OPERATION2 HANDLER!!\n";
+//        std::cout << "OPERATION2 HANDLER!!\n";
         d_lg.work();
 
         uint64_t e_time = event_time(msg);
