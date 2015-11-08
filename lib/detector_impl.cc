@@ -78,6 +78,7 @@ namespace gr {
 
             // pick a random time within our window of detection
             uint64_t evt_start = e_time + random()%(e_len);
+            //printf("evt(%ulu) --> new evt(%lu)\n", e_time, evt_start);
 
             // pick a random event type
             pmt::pmt_t event_type(pmt::mp("detect_type1_event"));
@@ -87,7 +88,8 @@ namespace gr {
 
 
             pmt_t evt = event_create( event_type, evt_start, next_evt_len );
-            message_port_pub(pmt::mp("which_stream"), evt);
+            //message_port_pub(pmt::mp("which_stream"), evt);
+            event_queue->add_event(evt);
             }
 
     }
