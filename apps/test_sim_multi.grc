@@ -650,50 +650,34 @@
     </param>
   </block>
   <block>
-    <key>es_trigger_sample_timer</key>
+    <key>parameter</key>
     <param>
       <key>id</key>
-      <value>es_trigger_sample_timer_0</value>
+      <value>t</value>
     </param>
     <param>
       <key>_enabled</key>
       <value>True</value>
     </param>
     <param>
-      <key>length</key>
-      <value>int(samp_rate/dps)</value>
+      <key>label</key>
+      <value></value>
     </param>
     <param>
-      <key>period</key>
-      <value>int(samp_rate/dps)</value>
-    </param>
-    <param>
-      <key>shift</key>
-      <value>10000</value>
-    </param>
-    <param>
-      <key>sched_dist</key>
-      <value>int(4*8e6)</value>
+      <key>value</key>
+      <value>900</value>
     </param>
     <param>
       <key>type</key>
-      <value>complex</value>
+      <value>intx</value>
+    </param>
+    <param>
+      <key>short_id</key>
+      <value></value>
     </param>
     <param>
       <key>alias</key>
       <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>int(8e6)</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
     </param>
     <param>
       <key>comment</key>
@@ -701,7 +685,50 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(456, 112)</value>
+      <value>(8, 210)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+  </block>
+  <block>
+    <key>parameter</key>
+    <param>
+      <key>id</key>
+      <value>nthreads</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value></value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>4</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>intx</value>
+    </param>
+    <param>
+      <key>short_id</key>
+      <value></value>
+    </param>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(8, 114)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -764,26 +791,34 @@
     </param>
   </block>
   <block>
-    <key>blocks_head</key>
+    <key>es_trigger_sample_timer</key>
     <param>
       <key>id</key>
-      <value>blocks_head_0</value>
+      <value>es_trigger_sample_timer_0</value>
     </param>
     <param>
       <key>_enabled</key>
       <value>True</value>
     </param>
     <param>
+      <key>length</key>
+      <value>int(samp_rate/dps)</value>
+    </param>
+    <param>
+      <key>period</key>
+      <value>int(samp_rate/dps)</value>
+    </param>
+    <param>
+      <key>shift</key>
+      <value>10000</value>
+    </param>
+    <param>
+      <key>sched_dist</key>
+      <value>int(4*8e6)</value>
+    </param>
+    <param>
       <key>type</key>
       <value>complex</value>
-    </param>
-    <param>
-      <key>num_items</key>
-      <value>int(t*samp_rate)</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
     </param>
     <param>
       <key>alias</key>
@@ -795,7 +830,7 @@
     </param>
     <param>
       <key>minoutbuf</key>
-      <value>0</value>
+      <value>int(8e6)</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -807,93 +842,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(232, 230)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>parameter</key>
-    <param>
-      <key>id</key>
-      <value>nthreads</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>label</key>
-      <value></value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>intx</value>
-    </param>
-    <param>
-      <key>short_id</key>
-      <value></value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(8, 100)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>parameter</key>
-    <param>
-      <key>id</key>
-      <value>t</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>label</key>
-      <value></value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>30</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>intx</value>
-    </param>
-    <param>
-      <key>short_id</key>
-      <value></value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(8, 194)</value>
+      <value>(456, 112)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -986,12 +935,6 @@
   </connection>
   <connection>
     <source_block_id>blocks_file_source_0</source_block_id>
-    <sink_block_id>blocks_head_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_head_0</source_block_id>
     <sink_block_id>es_trigger_sample_timer_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
