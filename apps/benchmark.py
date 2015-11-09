@@ -7,21 +7,30 @@ apps = [{"name": "Single Sink",
        {"name": "Multi Sink",
         "f": "test_sim_multi.py"}]
 
-simlen_sec = 30
 #nthreads = [1,2,4];
 #nthreads = [1,2,3,4,5,6,7,8];
-nthreads = [1,2,4,6,8];
-ntrials = 2
+#nthreads = [2,4,8,12];
+#nthreads = [4,8,12,16,20];
+nthreads = [4,8];
+ntrials = 3
 py = "/usr/bin/python"
-nstat = 10 # number of status updates to wait
+nstat = 15# number of status updates to wait
 numlines = 2+nstat*7
+
+# detects per second (output of detector block)
+dps = 500.0 
+
+# Event loading parameters
+ld = 10
+l1 = 50
+l2 = 100
 
 records = []
 for nt  in nthreads:
     for trial in range(0,ntrials):
         for app in apps:
             print "RUNNING", nt, trial, app           
-            p = subprocess.Popen([py, app['f'], '--nthreads=%d'%(nt)], stdout=subprocess.PIPE)
+            p = subprocess.Popen([py, app['f'], '--nthreads=%d'%(nt), "--dps=%f"%(dps), "--l1=%f"%(l1), "--l2=%f"%(l2), "--ld=%f"%(ld)], stdout=subprocess.PIPE)
             op = []
             for i in range(0,numlines):
                 o = p.stdout.readline() 

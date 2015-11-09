@@ -10,10 +10,12 @@ records = json.loads(open(fn,"r").read())
 # Compute and extract numbers from output strings
 for i in range(0,len(records)):
     e = filter(lambda y: not y == None, map(lambda x: re.search('events\W+= \d+ \((\d+\.\d+)\/sec', x), records[i]['output']))
-    assert(len(e) >= 1)
-    records[i]['eps_final'] = float(e[-1].group(1))
+    print len(e)
+    if(len(e) >= 1):
+        records[i]['eps_final'] = float(e[-1].group(1))
 
-nthreads = set(map(lambda x: x["nthreads"], records))
+records = filter(lambda x: x.has_key("eps_final"), records);
+nthreads = sorted(list(set(map(lambda x: x["nthreads"], records))))
 names = set(map(lambda x: x["d"], records))
 
 
@@ -25,7 +27,8 @@ for name in names:
     for nt in nthreads: 
         p = np.mean( map(lambda x: x["eps_final"], filter( lambda y:  y["d"]==name and y["nthreads"]==nt, records) ) )
         perf.append(p)
-    h, = plt.plot(list(nthreads), perf, label=name)
+    h, = plt.plot(nthreads, perf, label=name)
+    print nthreads,perf
     handles.append(h)
 
 plt.xlabel("Number of Threads");
