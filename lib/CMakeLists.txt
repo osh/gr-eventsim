@@ -62,23 +62,23 @@ install(TARGETS gnuradio-eventsim
 ########################################################################
 # Build and register unit test
 ########################################################################
-include(GrTest)
-
-include_directories(${CPPUNIT_INCLUDE_DIRS})
-
-list(APPEND test_eventsim_sources
-    ${CMAKE_CURRENT_SOURCE_DIR}/test_eventsim.cc
-    ${CMAKE_CURRENT_SOURCE_DIR}/qa_eventsim.cc
-)
-
-add_executable(test-eventsim ${test_eventsim_sources})
-
-target_link_libraries(
-  test-eventsim
-  ${GNURADIO_RUNTIME_LIBRARIES}
-  ${Boost_LIBRARIES}
-  ${CPPUNIT_LIBRARIES}
-  gnuradio-eventsim
-)
-
-GR_ADD_TEST(test_eventsim test-eventsim)
+#include(GrTest)
+#
+#include_directories(${CPPUNIT_INCLUDE_DIRS})
+#
+#list(APPEND test_eventsim_sources
+#    ${CMAKE_CURRENT_SOURCE_DIR}/test_eventsim.cc
+#    ${CMAKE_CURRENT_SOURCE_DIR}/qa_eventsim.cc
+#)
+#
+#add_executable(test-eventsim ${test_eventsim_sources})
+#
+#target_link_libraries(
+#  test-eventsim
+#  ${GNURADIO_RUNTIME_LIBRARIES}
+#  ${Boost_LIBRARIES}
+#  ${CPPUNIT_LIBRARIES}
+#  gnuradio-eventsim
+#)
+#
+#GR_ADD_TEST(test_eventsim test-eventsim)
