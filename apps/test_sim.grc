@@ -191,37 +191,6 @@
     </param>
   </block>
   <block>
-    <key>blocks_message_debug</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(1304, 602)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_message_debug_0</value>
-    </param>
-  </block>
-  <block>
     <key>parameter</key>
     <param>
       <key>alias</key>
@@ -308,49 +277,6 @@
     </param>
   </block>
   <block>
-    <key>es_handler_pdu</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>dt</key>
-      <value>es.es_handler_print.TYPE_F32</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(664, 862)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>es_handler_pdu_1</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
     <key>es_sink</key>
     <param>
       <key>alias</key>
@@ -366,7 +292,7 @@
     </param>
     <param>
       <key>eb</key>
-      <value>asap</value>
+      <value>discard</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -496,7 +422,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(568, 298)</value>
+      <value>(384, 306)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -547,7 +473,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(656, 434)</value>
+      <value>(632, 478)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -598,7 +524,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(704, 666)</value>
+      <value>(856, 670)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -853,12 +779,6 @@
     <sink_key>cpdus</sink_key>
   </connection>
   <connection>
-    <source_block_id>es_handler_pdu_1</source_block_id>
-    <sink_block_id>blocks_message_debug_0</sink_block_id>
-    <source_key>pdus_out</source_key>
-    <sink_key>print_pdu</sink_key>
-  </connection>
-  <connection>
     <source_block_id>es_trigger_sample_timer_0</source_block_id>
     <sink_block_id>es_sink_0</sink_block_id>
     <source_key>0</source_key>
@@ -911,12 +831,6 @@
     <sink_block_id>es_sink_0</sink_block_id>
     <source_key>which_stream</source_key>
     <sink_key>schedule_event</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>eventsim_operation2_0</source_block_id>
-    <sink_block_id>es_handler_pdu_1</sink_block_id>
-    <source_key>type2_event</source_key>
-    <sink_key>handle_event</sink_key>
   </connection>
   <connection>
     <source_block_id>eventsim_operation2_0</source_block_id>

@@ -218,68 +218,6 @@
     </param>
   </block>
   <block>
-    <key>blocks_message_debug</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(1392, 376)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_message_debug_0</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_message_debug</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(1144, 786)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_message_debug_1</value>
-    </param>
-  </block>
-  <block>
     <key>parameter</key>
     <param>
       <key>alias</key>
@@ -389,7 +327,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1128, 163)</value>
+      <value>(1272, 364)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -515,7 +453,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(728, 290)</value>
+      <value>(392, 314)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -566,7 +504,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(776, 434)</value>
+      <value>(616, 478)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -617,7 +555,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(792, 594)</value>
+      <value>(800, 662)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -872,18 +810,6 @@
     <sink_key>cpdus</sink_key>
   </connection>
   <connection>
-    <source_block_id>es_mulisink_0</source_block_id>
-    <sink_block_id>blocks_message_debug_0</sink_block_id>
-    <source_key>nconsumed</source_key>
-    <sink_key>print</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>es_mulisink_0</source_block_id>
-    <sink_block_id>blocks_message_debug_0</sink_block_id>
-    <source_key>pdu_event</source_key>
-    <sink_key>print</sink_key>
-  </connection>
-  <connection>
     <source_block_id>es_trigger_sample_timer_0</source_block_id>
     <sink_block_id>es_mulisink_0</sink_block_id>
     <source_key>0</source_key>
@@ -900,12 +826,6 @@
     <sink_block_id>eventsim_detector_0</sink_block_id>
     <source_key>sample_timer_event</source_key>
     <sink_key>handle_event</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>es_trigger_sample_timer_0</source_block_id>
-    <sink_block_id>blocks_message_debug_1</sink_block_id>
-    <source_key>which_stream</source_key>
-    <sink_key>print</sink_key>
   </connection>
   <connection>
     <source_block_id>es_trigger_sample_timer_0</source_block_id>
@@ -927,12 +847,6 @@
   </connection>
   <connection>
     <source_block_id>eventsim_detector_0</source_block_id>
-    <sink_block_id>blocks_message_debug_1</sink_block_id>
-    <source_key>which_stream</source_key>
-    <sink_key>print</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>eventsim_detector_0</source_block_id>
     <sink_block_id>es_mulisink_0</sink_block_id>
     <source_key>which_stream</source_key>
     <sink_key>schedule_event</sink_key>
@@ -945,21 +859,9 @@
   </connection>
   <connection>
     <source_block_id>eventsim_operation1_0</source_block_id>
-    <sink_block_id>blocks_message_debug_1</sink_block_id>
-    <source_key>which_stream</source_key>
-    <sink_key>print</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>eventsim_operation1_0</source_block_id>
     <sink_block_id>es_mulisink_0</sink_block_id>
     <source_key>which_stream</source_key>
     <sink_key>schedule_event</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>eventsim_operation2_0</source_block_id>
-    <sink_block_id>blocks_message_debug_1</sink_block_id>
-    <source_key>which_stream</source_key>
-    <sink_key>print</sink_key>
   </connection>
   <connection>
     <source_block_id>eventsim_operation2_0</source_block_id>

@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Test Sim
-# Generated: Sun Dec  6 23:44:35 2015
+# Generated: Sun Dec  6 23:57:59 2015
 ##################################################
 
 from gnuradio import blocks
@@ -44,7 +44,7 @@ class test_sim(gr.top_block):
         self.eventsim_detector_0 = eventsim.detector(samp_rate, dps, ld)
         self.es_trigger_sample_timer_0 = es.trigger_sample_timer(gr.sizeof_gr_complex, int(samp_rate/dbps), 10000, int(samp_rate), int(samp_rate/dbps) )
         (self.es_trigger_sample_timer_0).set_min_output_buffer(2000000)
-        self.es_sink_0 = es.sink(1*[gr.sizeof_gr_complex],nthreads,256,2,2,"")
+        self.es_sink_0 = es.sink(1*[gr.sizeof_gr_complex],nthreads,256,0,2,"")
         self.blocks_file_source_0 = blocks.file_source(gr.sizeof_gr_complex*1, "test.dat", True)
 
         ##################################################
