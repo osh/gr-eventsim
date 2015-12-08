@@ -1,8 +1,9 @@
 #!/usr/bin/env python2
+# -*- coding: utf-8 -*-
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Test Data Gen
-# Generated: Mon Nov 30 17:04:23 2015
+# Generated: Tue Dec  8 14:33:43 2015
 ##################################################
 
 from gnuradio import analog
@@ -12,6 +13,7 @@ from gnuradio import gr
 from gnuradio.eng_option import eng_option
 from gnuradio.filter import firdes
 from optparse import OptionParser
+
 
 class test_data_gen(gr.top_block):
 
@@ -37,7 +39,6 @@ class test_data_gen(gr.top_block):
         self.connect((self.analog_fastnoise_source_x_0, 0), (self.blocks_head_0, 0))    
         self.connect((self.blocks_head_0, 0), (self.blocks_file_sink_0, 0))    
 
-
     def get_samp_rate(self):
         return self.samp_rate
 
@@ -46,9 +47,12 @@ class test_data_gen(gr.top_block):
         self.blocks_head_0.set_length(int(self.samp_rate*10))
 
 
-if __name__ == '__main__':
-    parser = OptionParser(option_class=eng_option, usage="%prog: [options]")
-    (options, args) = parser.parse_args()
-    tb = test_data_gen()
+def main(top_block_cls=test_data_gen, options=None):
+
+    tb = top_block_cls()
     tb.start()
     tb.wait()
+
+
+if __name__ == '__main__':
+    main()
