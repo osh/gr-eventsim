@@ -1,5 +1,6 @@
 
 #include <counter.h>
+#include <iostream>
 
 
 
@@ -17,7 +18,8 @@ namespace gr {
         }
 
         void counter::print(){
-                    double dur = d_timer.elapsed();
+
+                    double dur = d_timer.elapsed().wall * 1e-9;
                     uint64_t e(d_events),d(d_runs_detector),a(d_runs_type_a),b(d_runs_type_b);
                     printf("********** COUNTER ************\n");
                     printf("* events   = %lu (%f/sec)\n", e, e/dur);

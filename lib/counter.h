@@ -3,13 +3,14 @@
 
 #include <boost/atomic.hpp>
 #include <stdio.h>
-#include <boost/timer.hpp>
+//#include <boost/timer.hpp>
+#include <boost/timer/timer.hpp>
 
 namespace gr {
     namespace eventsim {
         class counter {
             private:
-                boost::timer d_timer;
+                boost::timer::cpu_timer d_timer;
 
             public:
                 boost::atomic<uint64_t>     d_events;
