@@ -32,9 +32,10 @@ namespace gr {
      private:
       float d_fs, d_dps, d_load;
       load_generator d_lg;
+      int d_dispmod;
 
      public:
-      detector_impl(float fs, float dps, float load);
+      detector_impl(float fs, float dps, float load, int display_modulo);
       ~detector_impl();
       int work (int noutput_items,
         gr_vector_const_void_star &input_items,

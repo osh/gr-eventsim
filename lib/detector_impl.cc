@@ -32,19 +32,20 @@ namespace gr {
   namespace eventsim {
 
     detector::sptr
-    detector::make(float fs, float dps, float load)
+    detector::make(float fs, float dps, float load, int display_modulo)
     {
       return gnuradio::get_initial_sptr
-        (new detector_impl(fs, dps, load));
+        (new detector_impl(fs, dps, load, display_modulo));
     }
 
-    detector_impl::detector_impl(float fs, float dps, float load)
+    detector_impl::detector_impl(float fs, float dps, float load, int display_modulo)
       : gr::sync_block("detector_impl",
               gr::io_signature::make(0,0,0),
               gr::io_signature::make(0,0,0)),
         d_fs(fs),
         d_dps(dps),
-        d_lg(load)
+        d_lg(load),
+        d_dispmod(display_modulo)
     {
         register_handler("detect_type1_event");
         register_handler("detect_type2_event");
@@ -58,7 +59,7 @@ namespace gr {
     detector_impl::handler( pmt_t msg, gr_vector_void_star buf )
     {
         counter::global_counter.d_events++;
-        if(counter::global_counter.d_runs_detector++ % 100 == 99){
+        if(counter::global_counter.d_runs_detector++ % d_dispmod == (d_dispmod-1)){
             counter::global_counter.print();
         }
 //        std::cout << "DETECTOR HANDLER!!\n";

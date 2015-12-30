@@ -4,7 +4,7 @@
   <key>eventsim_detector</key>
   <category>eventsim</category>
   <import>import eventsim</import>
-  <make>eventsim.detector($fs, $dps, $load)</make>
+  <make>eventsim.detector($fs, $dps, $load, $dispmod)</make>
 
   <param>
     <name>fs</name>
@@ -25,6 +25,13 @@
     <key>load</key>
     <value>1.0</value>
     <type>float</type>
+  </param>
+
+  <param>
+    <name>display modulo</name>
+    <key>dispmod</key>
+    <value>20</value>
+    <type>int</type>
   </param>
 
   <sink>

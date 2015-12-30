@@ -36,7 +36,7 @@ namespace gr {
       typedef boost::shared_ptr<detector> sptr;
       virtual int work(int, gr_vector_const_void_star&, gr_vector_void_star&) = 0;
       virtual void handler(pmt::pmt_t, gr_vector_void_star) = 0;
-      static sptr make(float fs, float dps, float load);
+      static sptr make(float fs, float dps, float load, int display_modulo);
     };
 
   } // namespace eventsim
