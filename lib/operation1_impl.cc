@@ -63,8 +63,8 @@ namespace gr {
 
         // 60 percent chance of follow on event type2
         if(random() % 100 < 60){
-            pmt_t evt = event_create( pmt::mp("type1_event"), e_time, e_len );
-            message_port_pub(pmt::mp("which_stream"), evt);
+            pmt_t evt = event_create( pmt::mp("detect_type2_event"), e_time, e_len );
+            event_queue->add_event(evt);
             }
     }
 

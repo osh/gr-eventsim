@@ -61,8 +61,12 @@ namespace gr {
         uint64_t e_time = event_time(msg);
         uint64_t e_len = event_length(msg);
 
-//        pmt_t evt = event_create( pmt::mp("type2_event"), e_time, e_len );
-//        message_port_pub(pmt::mp("which_stream"), evt);
+        // 15 percent chance of follow on event type1
+        if(random() % 100 < 15){
+            pmt_t evt = event_create( pmt::mp("detect_type1_event"), e_time, e_len );
+            event_queue->add_event(evt);
+            }
+
     }
 
 
