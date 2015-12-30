@@ -3,9 +3,7 @@ import json, sys, pprint, re
 import matplotlib.pyplot as plt
 import numpy as np
 
-#metric = "e_final"
-#metric = "eps_final"
-metrics = ["e_final", "eps_final"]
+metrics = ["eps_final"]
 
 fn = sys.argv[1]
 print "loading %s"%(fn)
@@ -41,7 +39,8 @@ for metric in metrics:
         handles.append(h)
 
     plt.xlabel("Number of Threads");
-    plt.ylabel("%s"%(metric));
+    plt.ylabel("Events Per Second");
+    plt.title("Event Performance vs. Number of Threads vs. Number of Sinks")
     ax = plt.subplot(111)
     handles, labels = ax.get_legend_handles_labels()
     ax.legend(handles, labels, loc="lower left")

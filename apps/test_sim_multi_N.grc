@@ -178,7 +178,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>0</value>
     </param>
     <param>
       <key>file</key>
@@ -211,6 +211,61 @@
     <param>
       <key>repeat</key>
       <value>True</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>1</value>
+    </param>
+  </block>
+  <block>
+    <key>blocks_null_source</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>bus_conns</key>
+      <value>[[0,],]</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(272, 224)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_null_source_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>num_outputs</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>complex</value>
     </param>
     <param>
       <key>vlen</key>
@@ -276,7 +331,7 @@
     </param>
     <param>
       <key>eb</key>
-      <value>discard</value>
+      <value>balk</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -324,7 +379,7 @@
     </param>
     <param>
       <key>samplehistory</key>
-      <value>64</value>
+      <value>128</value>
     </param>
     <param>
       <key>tgroup</key>
@@ -359,7 +414,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(456, 112)</value>
+      <value>(488, 112)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -383,11 +438,11 @@
     </param>
     <param>
       <key>shift</key>
-      <value>10000</value>
+      <value>0</value>
     </param>
     <param>
       <key>sched_dist</key>
-      <value>int(samp_rate)</value>
+      <value>4*int(samp_rate)</value>
     </param>
   </block>
   <block>
@@ -716,7 +771,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>1</value>
+      <value>4</value>
     </param>
   </block>
   <block>
@@ -759,11 +814,17 @@
     </param>
     <param>
       <key>value</key>
-      <value>2</value>
+      <value>1</value>
     </param>
   </block>
   <connection>
     <source_block_id>blocks_file_source_0</source_block_id>
+    <sink_block_id>es_trigger_sample_timer_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>blocks_null_source_0</source_block_id>
     <sink_block_id>es_trigger_sample_timer_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
