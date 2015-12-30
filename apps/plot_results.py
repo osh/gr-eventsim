@@ -24,7 +24,6 @@ nsinks = sorted(list(set(map(lambda x: x["nsinks"], records))))
 nthreads = sorted(list(set(map(lambda x: x["nthreads"], records))))
 names = set(map(lambda x: x["d"], records))
 
-plt.figure()
 handles = []
 
 for metric in metrics:
@@ -45,7 +44,7 @@ for metric in metrics:
     plt.ylabel("%s"%(metric));
     ax = plt.subplot(111)
     handles, labels = ax.get_legend_handles_labels()
-    ax.legend(handles, labels)
+    ax.legend(handles, labels, loc="lower left")
 #plt.legend(handles=handles)
 plt.show()
 
